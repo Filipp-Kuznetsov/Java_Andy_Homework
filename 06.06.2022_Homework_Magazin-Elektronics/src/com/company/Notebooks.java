@@ -1,0 +1,23 @@
+package com.company;
+
+public class Notebooks extends Electronic{
+    public Notebooks(String name, double price) {
+        super(name, price);
+    }
+    @Override
+    void buy(){
+        additionalInsurance();
+
+    }
+    void additionalInsurance(){
+        System.out.println("Do you want to take additional insurance now? When yes," +
+                " please press '1', default press anyone another key");
+        int answer=sc.nextInt();
+        if (answer==1){
+            System.out.println("Your price is: "+(getPrice()+getPrice()*15/100)+" Euro     15%  for additional insurance.");
+        }
+        else  {
+            System.out.println("Your price is: "+(getPrice())+" Euro");
+        }
+    }
+}
